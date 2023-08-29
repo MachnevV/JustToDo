@@ -1,7 +1,23 @@
 <template>
-  <h1>To Do List will be here ...</h1>
-  <OptionsToDo/>
-
+  <h1>Working space</h1>
+  <div class="column">
+    <div class="fd">
+      <h2>BackLog</h2>
+      <OptionsToDo/>
+    </div>
+    <div class="fd">
+      <h2>In Progress</h2>
+      <OptionsToDo/>
+    </div>
+    <div class="fd">
+      <h2>Test</h2>
+      <OptionsToDo/>
+    </div>    
+    <div class="fd">
+      <h2>Done</h2>
+      <OptionsToDo/>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -19,6 +35,6 @@ export default {
 }
 
 .fd {
-  width: 200px;
+  width: 250px;
 }
 </style>

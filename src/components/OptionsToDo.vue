@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <h3>You have {{ todosCount }} ToDos!</h3>
+        <h3>{{ todosCount }} items</h3>
         <div>
             <input
                 v-model="newTodoName"
@@ -33,16 +33,12 @@ export default {
             todos: [
                 {
                   id: 1,
-                  name: 'One'
+                  name: 'First task'
                 },
                 {
                   id: 2,
-                  name: 'Two'
+                  name: 'Second task'
                 },             
-                {
-                  id: 3,
-                  name: 'Three'
-                },
             ],
             swearwords: ['bad', 'very bad']
         }
@@ -54,12 +50,14 @@ export default {
     },
     methods: {
         addTodo() {
-            let newTodo = {
-                id: Date.now(),
-                name: this.newTodoName
+            if (this.newTodoName != '') {
+                let newTodo = {
+                    id: Date.now(),
+                    name: this.newTodoName
+                }
+                this.todos.push(newTodo)
+                this.newTodoName = ''
             }
-            this.todos.push(newTodo)
-            this.newTodoName = ''
         },
         deleteTodo(index) {
             this.todos.splice(index, 1)
@@ -81,7 +79,7 @@ export default {
 ul {
     list-style: none;
     padding: 0;
-    width: 200px;
+    width: 240px;
     margin: 20px auto 0;
 }
 li {
