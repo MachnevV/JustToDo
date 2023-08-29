@@ -1,20 +1,25 @@
 <template>
-  <h1>To Do List will be here</h1>
-  <div class="column">
-    <ToDoList/>  
-    <ToDoList/>
-    <ToDoList/>    
-    <ToDoList/>
+  <div class="nav">
+    <router-link to="/">Landing</router-link> | 
+    <router-link to="/todolist">ToDoList</router-link>
   </div>
+  <router-view/>
 </template>
 
-<script setup>
-import ToDoList from './components/ToDoList.vue'
+<script>
 </script>
 
-<style scoped>
-.column {
-  display: flex;
-  justify-content: space-between;
+<style>
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
