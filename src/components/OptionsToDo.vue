@@ -3,16 +3,19 @@
         <h3>{{ todosCount }} items</h3>
         <div>
             <input
+                id="input"
                 v-model="newTodoName"
                 @keyup.enter="addTodo"
                 placeholder="Add a Todo"
                 type="text"
             >
             <input 
+                id="input"
                 type="button"
                 value="+"
                 @click="addTodo"
             >
+            <!-- <button>+</button> -->
         </div>
     </div>
     <div>
@@ -83,11 +86,19 @@ ul {
     margin: 20px auto 0;
 }
 li {
-    border: 1px solid;
+    border: 1px outset;
+    border-radius: 8px;
     display: flex;
+    align-items: center;
     margin-bottom: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08)
+
 }
 li span {
     flex-grow: 1;
+}
+
+input {
+    height: 30px;
 }
 </style>

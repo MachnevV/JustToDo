@@ -7,7 +7,9 @@
       <img src="/vite.svg" class="logo" alt="Vite logo" />
       <img src="../assets/vue.svg" class="logo vue" alt="Vue logo" />
     </div>
-    <router-link to="/todolist">Go to the ToDoList</router-link>
+    <button>
+      <router-link to="/todolist">Go to the ToDoList</router-link>
+    </button>
   </template>
   
   <script>
