@@ -1,31 +1,38 @@
 <template>
-    <div class="login">
-      <form class="form">
-        <h2>Login</h2>
-        <div class="notific">
-            <h3 style="color: red;" v-show="username.length < 3 && username.length > 0">Enter full name</h3>
-            <h3 style="color: red;" v-if="username.length > 15">Incorrect name length</h3>
-        </div>
-        <label for="username">Username</label>
-        <input v-model="username" name="username" type="text" class="input">
-        <label for="password">Password</label>
-        <input v-model="password" name="password" type="text" class="input">
-        <button class="btn" v-bind:disabled="username.length < 3 || username.length > 15">Login</button>
-      </form>    
-    </div>
+  <div class="login">
+    <form class="form" @submit.prevent="login">
+      <h2>Login</h2>
+      <div class="notific">
+        <h3 style="color: red;" v-show="username.length < 3 && username.length > 0">Enter full name</h3>
+        <h3 style="color: red;" v-if="username.length > 15">Incorrect name length</h3>
+      </div>
 
+      <label for="username">Username</label>
+      <input v-model="username" name="username" type="text" class="input">
+      <label for="password">Password</label>
+      <input v-model="password" name="password" type="text" class="input">
+      <button v-bind:disabled="username.length < 3 || username.length > 15">Login</button>
+    </form>    
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            username: '',
-            password: '',
-        }
+  data() {
+    return {
+      username: '',
+      password: '',
     }
+  },
+  methods: {
+    login() {
+      window.user = this.username
+      this.$router.push({name: 'ToDoList'})
+    }
+  }
 }
 </script>
+
 <style>
 .form {
   display:flex;
@@ -47,12 +54,4 @@ export default {
 .notific {
 height: 65px;
 }
-
-/* .btn{
-  background-color:#2c3e50;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  border:none;
-} */
 </style>
