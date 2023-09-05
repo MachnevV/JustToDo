@@ -1,19 +1,19 @@
 <template>
   <h1>Hello, {{ username }}</h1>
-  <div class="column">
-    <div class="fd">
+  <div class="table">
+    <div class="column">
       <h2>BackLog</h2>
       <OptionsToDo/>
     </div>
-    <div class="fd">
+    <div class="column">
       <h2>In Progress</h2>
       <OptionsToDo/>
     </div>
-    <div class="fd">
+    <div class="column">
       <h2>Test</h2>
       <OptionsToDo/>
     </div>    
-    <div class="fd">
+    <div class="column">
       <h2>Done</h2>
       <OptionsToDo/>
     </div>
@@ -37,17 +37,15 @@ export default {
       this.$router.push({name: 'Landing'})
     }
   }
-
 }
 </script>
 
 <style>
-.column {
+.table {
   display: flex;
   justify-content: space-between;
 }
-
-.fd {
+.column {
   width: 250px;
 }
 </style>

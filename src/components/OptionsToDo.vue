@@ -9,7 +9,7 @@
                 placeholder="Add a Todo"
                 type="text"
             >
-            <input 
+            <input
                 id="input"
                 type="button"
                 value="+"
@@ -97,7 +97,6 @@ li {
 li span {
     flex-grow: 1;
 }
-
 input {
     height: 30px;
 }

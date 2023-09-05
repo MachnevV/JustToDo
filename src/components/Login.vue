@@ -8,9 +8,9 @@
       </div>
 
       <label for="username">Username</label>
-      <input v-model="username" name="username" type="text" class="input">
+      <input v-model="username" id="username" type="text" class="input">
       <label for="password">Password</label>
-      <input v-model="password" name="password" type="text" class="input">
+      <input v-model="password" id="password" type="text" class="input">
       <button v-bind:disabled="username.length < 3 || username.length > 15">Login</button>
     </form>    
   </div>

@@ -17,12 +17,10 @@
   padding: 30px;
   /* background: linear-gradient(-90deg, #a7da96, #48cabd); */
 }
-
 .nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-
 .nav a.router-link-exact-active {
   color: #42b983;
 }

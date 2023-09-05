@@ -13,32 +13,31 @@
         <router-link to="/todolist">Go to the ToDoList</router-link>
       </button>
     </div>
-    <Login/>
+    <Login />
   </div>
-  </template>
+</template>
 
-  <script>
-  import Login from '../components/Login.vue';
-  export default {
-    components: {Login}
-  }
-  </script>
-  
-  <style>
-  .logo {
-    height: 10em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
-  }
-  .homepage {
-    display: flex;
-  }
-  </style>
-  
+<script>
+import Login from '../components/Login.vue'
+export default {
+  components: {Login}
+}
+</script>
+
+<style>
+.logo {
+  height: 10em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
+}
+.homepage {
+  display: flex;
+}
+</style>
