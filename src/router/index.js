@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from "vue-router";
-import Landing from '../views/Landing.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import LandingPage from '../views/LandingPage.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Landing',
-    component: Landing
+    name: 'LandingPage',
+    component: LandingPage,
   },
   {
     path: '/todolist',
@@ -13,23 +13,23 @@ const routes = [
     component: () => import('../views/ToDoList.vue'),
     meta: {
       requiresAuth: true,
-    }
+    },
   },
   {
-    path: '/login',
-    name: 'login',
-    component: ()=> import('../components/Login.vue')
+    path: '/loginform',
+    name: 'LoginForm',
+    component: () => import('../components/LoginForm.vue'),
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 })
 
-router.beforeEach((to, from)=>{
-  if(to.meta.requiresAuth && !window.user){
-    return {name: 'login'}
+router.beforeEach((to) => {
+  if (to.meta.requiresAuth && !window.user) {
+    return { name: 'LoginForm' }
   }
 })
 

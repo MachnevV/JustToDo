@@ -3,16 +3,23 @@
     <form class="form" @submit.prevent="login">
       <h2>Login</h2>
       <div class="notific">
-        <h3 style="color: red;" v-show="username.length < 3 && username.length > 0">Enter full name</h3>
-        <h3 style="color: red;" v-if="username.length > 15">Incorrect name length</h3>
+        <h3
+          v-show="username.length < 3 && username.length > 0"
+          style="color: red">
+          Enter full name
+        </h3>
+        <h3 v-if="username.length > 15" style="color: red">
+          Incorrect name length
+        </h3>
       </div>
-
       <label for="username">Username</label>
-      <input v-model="username" id="username" type="text" class="input">
+      <input id="username" v-model="username" type="text" class="input" />
       <label for="password">Password</label>
-      <input v-model="password" id="password" type="text" class="input">
-      <button v-bind:disabled="username.length < 3 || username.length > 15">Login</button>
-    </form>    
+      <input id="password" v-model="password" type="text" class="input" />
+      <button :disabled="username.length < 3 || username.length > 15">
+        Login
+      </button>
+    </form>
   </div>
 </template>
 
@@ -27,15 +34,15 @@ export default {
   methods: {
     login() {
       window.user = this.username
-      this.$router.push({name: 'ToDoList'})
-    }
-  }
+      this.$router.push({ name: 'ToDoList' })
+    },
+  },
 }
 </script>
 
 <style>
 .form {
-  display:flex;
+  display: flex;
   flex-direction: column;
   margin: 0 auto;
   border: 1px solid gray;
@@ -48,10 +55,10 @@ export default {
 .input {
   border: 1px solid gray;
   padding: 10px;
-  margin-bottom:20px;
-  border-radius:5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 .notific {
-height: 65px;
+  height: 65px;
 }
 </style>

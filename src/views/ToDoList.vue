@@ -3,19 +3,19 @@
   <div class="table">
     <div class="column">
       <h2>BackLog</h2>
-      <OptionsToDo/>
+      <OptionsToDo />
     </div>
     <div class="column">
       <h2>In Progress</h2>
-      <OptionsToDo/>
+      <OptionsToDo />
     </div>
     <div class="column">
       <h2>Test</h2>
-      <OptionsToDo/>
-    </div>    
+      <OptionsToDo />
+    </div>
     <div class="column">
       <h2>Done</h2>
-      <OptionsToDo/>
+      <OptionsToDo />
     </div>
   </div>
   <button @click="logout">Logout</button>
@@ -23,20 +23,19 @@
 
 <script>
 import OptionsToDo from '../components/OptionsToDo.vue'
-import ToDoItem from '../components/ToDoItem.vue'
 export default {
-  components: {OptionsToDo, ToDoItem},
-  data(){
+  components: { OptionsToDo },
+  data() {
     return {
-      username: window.user
+      username: window.user,
     }
   },
-  methods:{
-    logout(){
+  methods: {
+    logout() {
       window.user = null
-      this.$router.push({name: 'Landing'})
-    }
-  }
+      this.$router.push({ name: 'LandingPage' })
+    },
+  },
 }
 </script>
 
